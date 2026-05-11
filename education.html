@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Education Pathway — JJ's Adventure Plan</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.edu-hero{background:var(--ocean);color:#fff;padding:clamp(4rem,8vw,7rem) clamp(2rem,5vw,5rem) clamp(3rem,5vw,4rem);border-bottom:2px solid var(--ink);}
+.edu-hero-kicker{font-family:'Courier Prime',monospace;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:1rem;}
+.edu-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,8vw,7rem);line-height:.88;letter-spacing:-.03em;margin-bottom:1.5rem;}
+.edu-hero-desc{font-size:1.05rem;font-weight:300;opacity:.85;max-width:60ch;line-height:1.75;}
+.edu-path{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1280px;margin:0 auto;}
+.edu-path-spine{padding:3rem 0 3rem 3rem;border-right:2px solid var(--rule);display:flex;flex-direction:column;gap:0;}
+.spine-step{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1.5rem 0;}
+.spine-dot{width:14px;height:14px;border-radius:50%;background:var(--ocean);flex-shrink:0;}
+.spine-dot.large{width:20px;height:20px;background:var(--amber);}
+.spine-line{width:2px;flex:1;background:var(--rule);min-height:40px;}
+.spine-year{font-family:'Courier Prime',monospace;font-size:.62rem;letter-spacing:.18em;color:var(--ocean);}
+.edu-steps{padding:2rem 0 2rem 3rem;}
+.edu-step{padding:2rem 3rem 2rem 0;border-bottom:1px solid var(--rule);}
+.edu-step:last-child{border-bottom:0;}
+.step-kicker{font-family:'Courier Prime',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ocean);margin-bottom:.5rem;}
+.step-title{font-family:'Cormorant Garamond',serif;font-size:2.5rem;letter-spacing:-.025em;line-height:.95;color:var(--ink);margin-bottom:.35rem;}
+.step-inst{font-family:'Courier Prime',monospace;font-size:.75rem;letter-spacing:.12em;color:var(--muted);margin-bottom:1rem;}
+.step-desc{font-size:.93rem;color:var(--ink2);font-weight:300;line-height:1.72;max-width:64ch;margin-bottom:1.5rem;}
+.step-details{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin-bottom:1.25rem;}
+.step-detail-box{background:var(--white);padding:1.1rem 1.25rem;}
+.sdl{font-family:'Courier Prime',monospace;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.sdv{font-size:.86rem;font-weight:500;color:var(--ink);line-height:1.4;}
+.step-courses{margin-bottom:1.25rem;}
+.step-courses-label{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ocean);margin-bottom:.7rem;padding-bottom:.5rem;border-bottom:1px solid var(--rule);}
+.courses-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.35rem;}
+.course-pill{font-size:.8rem;color:var(--ink2);font-weight:300;padding:.3rem .6rem;background:var(--sky);border-radius:4px;border:1px solid var(--skydeep);}
+.step-link{display:inline-flex;align-items:center;gap:.4rem;font-family:'Courier Prime',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ocean);text-decoration:none;border:1px solid var(--skydeep);padding:.3rem .7rem;border-radius:4px;transition:background .15s;}
+.step-link:hover{background:var(--sky);}
+.step-highlight{background:var(--ocean);color:#fff;border-radius:8px;padding:1.5rem 2rem;margin-bottom:1.25rem;}
+.step-highlight p{font-size:.93rem;font-weight:300;opacity:.9;line-height:1.7;}
+.step-highlight strong{color:#fff;font-weight:600;}
+.career-section{background:var(--paper);border-top:2px solid var(--ink);padding:4rem clamp(1.5rem,5vw,4rem);}
+.career-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden;max-width:1280px;margin:1.5rem auto 0;}
+.career-box{background:var(--white);padding:1.75rem;}
+.career-label{font-family:'Courier Prime',monospace;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ocean);margin-bottom:.85rem;padding-bottom:.6rem;border-bottom:1px solid var(--rule);}
+.career-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;line-height:1.2;color:var(--ink);margin-bottom:.5rem;}
+.career-desc{font-size:.84rem;color:var(--ink2);font-weight:300;line-height:1.6;}
+.timeline-integration{max-width:1280px;margin:0 auto;padding:4rem clamp(1.5rem,5vw,4rem);}
+.ti-table{width:100%;border-collapse:collapse;border:1px solid var(--rule);border-radius:8px;overflow:hidden;}
+.ti-table th{background:var(--paper);font-family:'Courier Prime',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:left;padding:.75rem 1rem;border-bottom:1px solid var(--rule);}
+.ti-table td{padding:.7rem 1rem;border-bottom:1px solid var(--rule);font-size:.86rem;color:var(--ink2);vertical-align:top;}
+.ti-table tr:last-child td{border-bottom:0;}
+.ti-table tr:hover td{background:var(--cream);}
+.age-pill{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:50%;background:var(--sky);color:var(--ocean);font-weight:700;font-family:'Cormorant Garamond',serif;font-size:1.1rem;}
+.trip-ref{font-family:'Courier Prime',monospace;font-size:.7rem;color:var(--ocean);}
+.edu-ref{font-size:.83rem;color:var(--ink2);font-weight:300;}
+@media(max-width:900px){.edu-path{grid-template-columns:1fr;}.edu-path-spine{display:none;}.step-details{grid-template-columns:repeat(2,1fr);}.courses-grid{grid-template-columns:1fr;}.career-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-brand" href="index.html">JJ's Adventure Plan</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="trip-disney.html">Disney</a></li>
+    <li><a href="trip-toronto.html">Toronto</a></li>
+    <li><a href="trip-monterey.html">Monterey</a></li>
+    <li><a href="trip-banff.html">Banff</a></li>
+    <li><a href="trip-bahamas.html">Bahamas</a></li>
+    <li><a href="trip-newfoundland.html">Newfoundland</a></li>
+    <li><a href="trip-hawaii.html">Hawaii</a></li>
+    <li><a href="trip-alaska.html">Alaska</a></li>
+    <li><a href="education.html" class="active">Education</a></li>
+  </ul>
+</nav>
+<div class="page-wrap">
+
+<div class="edu-hero">
+  <a class="back-btn" href="index.html" style="color:rgba(255,255,255,.7);">← Back to all trips</a>
+  <div class="edu-hero-kicker">The Academic Pathway · 2044 – 2057</div>
+  <h1 class="edu-hero-title">From Farm to<br>Scripps Institution</h1>
+  <p class="edu-hero-desc">Three world-class institutions. Thirteen years of post-secondary education. A pathway from a farm in Ontario to the Scripps Institution of Oceanography in La Jolla — one of the most prestigious marine science research centres on Earth.</p>
+</div>
+
+<div class="edu-path">
+  <div class="edu-path-spine">
+    <div class="spine-step"><span class="spine-year">2044</span><div class="spine-dot large"></div><div class="spine-line"></div></div>
+    <div class="spine-step"><span class="spine-year">BSc</span><div class="spine-dot"></div><div class="spine-line"></div></div>
+    <div class="spine-step"><span class="spine-year">2048</span><div class="spine-dot large"></div><div class="spine-line"></div></div>
+    <div class="spine-step"><span class="spine-year">MSc</span><div class="spine-dot"></div><div class="spine-line"></div></div>
+    <div class="spine-step"><span class="spine-year">2050</span><div class="spine-dot large"></div><div class="spine-line"></div></div>
+    <div class="spine-step"><span class="spine-year">PhD</span><div class="spine-dot"></div><div class="spine-line"></div></div>
+    <div class="spine-step"><span class="spine-year">2055+</span><div class="spine-dot large"></div></div>
+  </div>
+
+  <div class="edu-steps">
+
+    <div class="edu-step">
+      <div class="step-kicker">Step 01 · 2044–2048 · Undergraduate</div>
+      <h2 class="step-title">BSc Marine Biology</h2>
+      <div class="step-inst">Dalhousie University · Halifax, Nova Scotia</div>
+      <p class="step-desc">Dalhousie's Department of Biology offers one of Canada's leading undergraduate Marine Biology programs, with direct access to the Northwest Atlantic Ocean, the Bedford Institute of Oceanography, and world-class research vessels operating in some of the most biologically productive waters on Earth. Halifax is a working port city deeply connected to the ocean — the ideal first step for JJ coming from a farm background into formal marine science.</p>
+      <div class="step-highlight">
+        <p><strong>Why Dalhousie?</strong> Located on the Atlantic coast JJ first explored in Newfoundland at age 14. The Maritimes maritime culture, proximity to Iceberg Alley, and the Bedford Institute partnership mean field opportunities begin in Year 1. Dalhousie has one of the strongest marine mammal research groups in Canada — directly aligned with JJ's orca and humpback experiences.</p>
+      </div>
+      <div class="step-details">
+        <div class="step-detail-box"><div class="sdl">Location</div><div class="sdv">Halifax, Nova Scotia</div></div>
+        <div class="step-detail-box"><div class="sdl">Duration</div><div class="sdv">4 years (2044–2048)</div></div>
+        <div class="step-detail-box"><div class="sdl">Degree</div><div class="sdv">BSc (Hons) Marine Biology</div></div>
+        <div class="step-detail-box"><div class="sdl">Tuition (est.)</div><div class="sdv">~$9,000–12,000 CAD/year</div></div>
+        <div class="step-detail-box"><div class="sdl">Living Costs</div><div class="sdv">~$15,000–18,000 CAD/year</div></div>
+        <div class="step-detail-box"><div class="sdl">Total Est. Cost</div><div class="sdv">~$96,000–120,000 CAD (4 yr)</div></div>
+      </div>
+      <div class="step-courses">
+        <div class="step-courses-label">Key Courses + Opportunities</div>
+        <div class="courses-grid">
+          <div class="course-pill">Marine Invertebrate Biology</div>
+          <div class="course-pill">Oceanography I &amp; II</div>
+          <div class="course-pill">Marine Mammal Science</div>
+          <div class="course-pill">Fisheries Science + Ecology</div>
+          <div class="course-pill">Marine Ecology Field Course (Bamfield)</div>
+          <div class="course-pill">Scientific Diving certification</div>
+          <div class="course-pill">Biological Oceanography</div>
+          <div class="course-pill">Honours thesis with field research component</div>
+        </div>
+      </div>
+      <div class="callout callout-ocean" style="margin-bottom:1rem;">
+        <div class="callout-label">Trip Connection</div>
+        <p>The Newfoundland graduation trip at age 14 introduced JJ to the cod collapse, Atlantic ecosystems, and iceberg oceanography. Halifax is 4 hours from St. John's — Dalhousie students have access to the same waters, the same species, and the same research questions JJ first encountered on that trip.</p>
+      </div>
+      <a class="step-link" href="https://www.dal.ca/faculty/science/biology.html" target="_blank">Dalhousie Biology →</a>
+    </div>
+
+    <div class="edu-step">
+      <div class="step-kicker">Step 02 · 2048–2050 · Graduate</div>
+      <h2 class="step-title">MSc Earth &amp; Ocean Sciences</h2>
+      <div class="step-inst">University of Victoria · Victoria, British Columbia</div>
+      <p class="step-desc">The University of Victoria's School of Earth and Ocean Sciences (SEOS) is consistently ranked among Canada's top graduate programs for oceanography, marine geoscience, and climate science. Victoria sits at the junction of the Pacific Ocean, the Strait of Juan de Fuca, and the southern tip of Vancouver Island — the same coastline JJ will have dived at age 18. The proximity to the Institute of Ocean Sciences in Sidney, BC and the Pacific marine research network makes UVic an exceptional bridge between Canadian field science and international ocean research.</p>
+      <div class="step-highlight">
+        <p><strong>Why UVic?</strong> After experiencing Vancouver Island's orca ecology, kelp forests, and salmon watersheds on the Alaska graduation trip, UVic gives JJ the chance to do graduate research in those same waters. SEOS faculty work on topics directly aligned with the adventure plan arc: Pacific ocean circulation, marine mammal ecology, tidal estuaries, and climate-driven ecosystem change.</p>
+      </div>
+      <div class="step-details">
+        <div class="step-detail-box"><div class="sdl">Location</div><div class="sdv">Victoria, British Columbia</div></div>
+        <div class="step-detail-box"><div class="sdl">Duration</div><div class="sdv">2 years (2048–2050)</div></div>
+        <div class="step-detail-box"><div class="sdl">Degree</div><div class="sdv">MSc Earth &amp; Ocean Sciences</div></div>
+        <div class="step-detail-box"><div class="sdl">Tuition (est.)</div><div class="sdv">~$8,000–10,000 CAD/year</div></div>
+        <div class="step-detail-box"><div class="sdl">Living Costs</div><div class="sdv">~$20,000–24,000 CAD/year</div></div>
+        <div class="step-detail-box"><div class="sdl">Total Est. Cost</div><div class="sdv">~$56,000–68,000 CAD (2 yr)</div></div>
+      </div>
+      <div class="step-courses">
+        <div class="step-courses-label">Research Focus Areas at SEOS</div>
+        <div class="courses-grid">
+          <div class="course-pill">Physical oceanography + ocean circulation</div>
+          <div class="course-pill">Marine geochemistry</div>
+          <div class="course-pill">Pacific coastal ecosystem dynamics</div>
+          <div class="course-pill">Marine mammal population ecology</div>
+          <div class="course-pill">Climate change + ocean acidification</div>
+          <div class="course-pill">Tidal estuary research</div>
+          <div class="course-pill">Remote sensing of ocean systems</div>
+          <div class="course-pill">MSc thesis with at-sea field component</div>
+        </div>
+      </div>
+      <div class="callout callout-ocean" style="margin-bottom:1rem;">
+        <div class="callout-label">Trip Connection</div>
+        <p>The Alaska graduation trip at age 18 centred on Vancouver Island's orca pods, kelp forests, and salmon watershed ecology — all active research areas at UVic SEOS. Victoria is 2 hours by ferry from Telegraph Cove and the Johnstone Strait orca watching grounds. Graduate fieldwork could take place on the same water where JJ first heard orca vocalizations through a kayak hull.</p>
+      </div>
+      <a class="step-link" href="https://www.uvic.ca/science/seos/" target="_blank">UVic SEOS →</a>
+    </div>
+
+    <div class="edu-step">
+      <div class="step-kicker">Step 03 · 2050–2055 · Doctoral</div>
+      <h2 class="step-title">PhD Oceanography</h2>
+      <div class="step-inst">Scripps Institution of Oceanography · La Jolla, California · UC San Diego</div>
+      <p class="step-desc">The Scripps Institution of Oceanography at UC San Diego is one of the oldest, largest, and most consequential oceanographic institutions in the world. Founded in 1903, Scripps employs over 300 researchers, operates four major research vessels, and has produced foundational discoveries in ocean circulation, climate science, marine biology, and deep-sea ecology. A PhD from Scripps is a credential recognized at the highest levels of international ocean science. La Jolla sits on the Pacific coast 30 minutes north of San Diego — the same ocean JJ first saw from Cannery Row at age 7.</p>
+      <div class="step-highlight">
+        <p><strong>Why Scripps?</strong> Scripps represents the culmination of everything the adventure plan was building toward. The Keeling Curve (measuring atmospheric CO₂) was established at Scripps. The world's understanding of El Niño, deep ocean circulation, and marine biodiversity was significantly advanced by Scripps researchers. A PhD here places JJ at the centre of global ocean science at exactly the moment — mid-21st century — when ocean research is most urgently needed.</p>
+      </div>
+      <div class="step-details">
+        <div class="step-detail-box"><div class="sdl">Location</div><div class="sdv">La Jolla, California (UC San Diego)</div></div>
+        <div class="step-detail-box"><div class="sdl">Duration</div><div class="sdv">4–6 years (est. 2050–2055)</div></div>
+        <div class="step-detail-box"><div class="sdl">Degree</div><div class="sdv">PhD Oceanography (or Marine Biology)</div></div>
+        <div class="step-detail-box"><div class="sdl">Tuition</div><div class="sdv">Typically fully funded for PhD students via stipend</div></div>
+        <div class="step-detail-box"><div class="sdl">Stipend (est.)</div><div class="sdv">~$35,000–45,000 USD/year</div></div>
+        <div class="step-detail-box"><div class="sdl">Research Vessels</div><div class="sdv">R/V Roger Revelle, R/V Sproul, and others</div></div>
+      </div>
+      <div class="step-courses">
+        <div class="step-courses-label">Scripps Research Divisions Aligned with JJ's Interests</div>
+        <div class="courses-grid">
+          <div class="course-pill">Marine Biology Research Division</div>
+          <div class="course-pill">Ocean Biosciences Division</div>
+          <div class="course-pill">Climate, Atmospheric Science &amp; Physical Oceanography</div>
+          <div class="course-pill">Integrative Oceanography Division</div>
+          <div class="course-pill">Polar and Ice Cores Research (glaciology)</div>
+          <div class="course-pill">Center for Marine Biodiversity and Conservation</div>
+          <div class="course-pill">Octopus and cephalopod cognition research</div>
+          <div class="course-pill">At-sea expeditions on research vessels globally</div>
+        </div>
+      </div>
+      <div class="callout callout-ocean" style="margin-bottom:1rem;">
+        <div class="callout-label">Trip Connection</div>
+        <p>The Monterey + Yosemite trip at age 7 was JJ's first encounter with California's ocean. Scripps is 8 hours south of Monterey — the same California coast, the same Pacific upwelling, the same deep-water systems. The kelp forest JJ watched from the aquarium glass at age 7 and dived in British Columbia at age 18 is the same ecosystem Scripps researchers have studied since 1903.</p>
+      </div>
+      <a class="step-link" href="https://scripps.ucsd.edu" target="_blank">Scripps Institution of Oceanography →</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="career-section">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div class="section-kicker">After the PhD</div>
+    <h2 class="section-heading">Career Pathways</h2>
+    <p class="section-intro">A Scripps PhD opens doors across academia, government science, international conservation, and private research. These are the most aligned pathways given JJ's adventure arc.</p>
+  </div>
+  <div class="career-grid">
+    <div class="career-box">
+      <div class="career-label">Academic Research</div>
+      <div class="career-title">University Professor + Principal Investigator</div>
+      <div class="career-desc">Run an independent research lab at a research university. Canadian options: Dalhousie, UVic, UBC, U of T. International: MBARI, Woods Hole, Plymouth Marine Laboratory. Teach, publish, and lead at-sea expeditions. The path for someone who wants to ask original questions about how the ocean works.</div>
+    </div>
+    <div class="career-box">
+      <div class="career-label">Government Science</div>
+      <div class="career-title">Fisheries and Oceans Canada (DFO) Scientist</div>
+      <div class="career-desc">Canada's Department of Fisheries and Oceans employs hundreds of marine biologists and oceanographers. Research areas: salmon population dynamics, marine mammal health, ocean acidification, Arctic ecosystems. Stable federal career with significant field research opportunities across all three Canadian ocean coasts.</div>
+    </div>
+    <div class="career-box">
+      <div class="career-label">International Conservation</div>
+      <div class="career-title">IUCN / Marine Protected Area Science</div>
+      <div class="career-desc">Work with international bodies (IUCN, UNESCO, UNEP) on marine protected area design, ocean policy, and biodiversity assessment. A Scripps PhD carries significant weight in international policy circles. This path connects ocean science directly to the conservation outcomes JJ encountered at every trip — from manatee rescue at age 3 to orca conservation at age 18.</div>
+    </div>
+    <div class="career-box">
+      <div class="career-label">Deep Ocean Research</div>
+      <div class="career-title">MBARI / Deep-Sea Marine Biologist</div>
+      <div class="career-desc">The Monterey Bay Aquarium Research Institute (MBARI) is one of the world's leading deep-sea research institutions — operating ROVs that explore the ocean floor. Located in Moss Landing, 15 minutes from the Monterey Bay Aquarium JJ first visited at age 7. Full circle: from watching the kelp forest through aquarium glass to operating ROVs in the submarine canyon beneath it.</div>
+    </div>
+    <div class="career-box">
+      <div class="career-label">Climate Science</div>
+      <div class="career-title">Ocean-Climate Researcher</div>
+      <div class="career-desc">The mid-21st century urgency around ocean acidification, warming, deoxygenation, and coral bleaching makes ocean-climate scientists among the most needed researchers in the world. Scripps's Climate, Atmospheric Science and Physical Oceanography division is a global leader. The retreating glaciers JJ saw at age 10 and 18 provide a visceral motivation for this work.</div>
+    </div>
+    <div class="career-box">
+      <div class="career-label">Science Communication</div>
+      <div class="career-title">Ocean Educator + Documentarian</div>
+      <div class="career-desc">A scientist who grew up watching Blue Planet and then became a marine biologist is uniquely placed to communicate ocean science to the public. David Attenborough, Sylvia Earle, and Edith Widder all combined rigorous science with the ability to make it matter to non-scientists. JJ's adventure plan is already a story — there may be a film, book, or educational program in it.</div>
+    </div>
+  </div>
+</div>
+
+<div class="timeline-integration">
+  <div class="section-kicker">The Full Picture</div>
+  <h2 class="section-heading">Trips + Education Integrated Timeline</h2>
+  <p class="section-intro">How the adventure plan and the academic pathway fit together across JJ's life.</p>
+  <table class="ti-table">
+    <thead><tr><th>Age</th><th>Year</th><th>Trip / Event</th><th>Education Connection</th></tr></thead>
+    <tbody>
+      <tr><td><span class="age-pill">3</span></td><td>2029</td><td><span class="trip-ref">TRIP 01 →</span> Disney / Florida</td><td class="edu-ref">First ocean animals — seeds planted</td></tr>
+      <tr><td><span class="age-pill">5</span></td><td>2031</td><td><span class="trip-ref">TRIP 02 →</span> Toronto</td><td class="edu-ref">Ripley's Aquarium — first formal aquarium science</td></tr>
+      <tr><td><span class="age-pill">7</span></td><td>2033</td><td><span class="trip-ref">TRIP 03 →</span> Monterey + Yosemite</td><td class="edu-ref">Nature journal started; ecosystem thinking begins; same California coast as Scripps</td></tr>
+      <tr><td><span class="age-pill">10</span></td><td>2036</td><td><span class="trip-ref">TRIP 04 →</span> Banff + Jasper</td><td class="edu-ref">Watershed systems, glacier retreat — foundational physical science</td></tr>
+      <tr><td><span class="age-pill">12</span></td><td>2038</td><td><span class="trip-ref">TRIP 05 →</span> Bahamas</td><td class="edu-ref">First field biology; species ID; food web mapping; PADI Junior certification</td></tr>
+      <tr><td><span class="age-pill">14</span></td><td>2040</td><td><span class="trip-ref">TRIP 06 →</span> Newfoundland <em>(Elem. Grad)</em></td><td class="edu-ref">Cod collapse, Atlantic ecology, iceberg oceanography — same waters as Dalhousie</td></tr>
+      <tr><td><span class="age-pill">16</span></td><td>2042</td><td><span class="trip-ref">TRIP 07 →</span> Hawaii</td><td class="edu-ref">Island biogeography, PADI Open Water, first research-level dive science questions</td></tr>
+      <tr><td><span class="age-pill">18</span></td><td>2044</td><td><span class="trip-ref">TRIP 08 →</span> Vancouver Island + Alaska <em>(HS Grad)</em></td><td class="edu-ref">Orca ecology, kelp forest dives, GPO — same waters as UVic SEOS graduate research</td></tr>
+      <tr><td><span class="age-pill">18</span></td><td>2044</td><td>Begin BSc at Dalhousie University</td><td class="edu-ref">Halifax — Atlantic coast, Bedford Institute, marine mammal research</td></tr>
+      <tr><td><span class="age-pill">22</span></td><td>2048</td><td>BSc Marine Biology completed</td><td class="edu-ref">Honours thesis; likely first peer-reviewed publication</td></tr>
+      <tr><td><span class="age-pill">22</span></td><td>2048</td><td>Begin MSc at University of Victoria</td><td class="edu-ref">Victoria, BC — Pacific coast, Institute of Ocean Sciences, SEOS</td></tr>
+      <tr><td><span class="age-pill">24</span></td><td>2050</td><td>MSc Earth &amp; Ocean Sciences completed</td><td class="edu-ref">MSc thesis; field research in Pacific waters; application to Scripps</td></tr>
+      <tr><td><span class="age-pill">24</span></td><td>2050</td><td>Begin PhD at Scripps Institution of Oceanography</td><td class="edu-ref">La Jolla, CA — global ocean science, research vessel expeditions</td></tr>
+      <tr><td><span class="age-pill">29</span></td><td>2055</td><td>PhD Oceanography completed</td><td class="edu-ref">Dissertation, postdoctoral applications, career launch</td></tr>
+      <tr><td><span class="age-pill">30+</span></td><td>2056+</td><td>Career in ocean science</td><td class="edu-ref">DFO, academia, MBARI, IUCN, climate research — or something we can't yet imagine</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="callout callout-gold" style="max-width:1280px;margin:0 auto 2rem;padding-left:clamp(1.5rem,5vw,4rem);padding-right:clamp(1.5rem,5vw,4rem);">
+  <div class="callout-label">A Note on Costs</div>
+  <p>The full post-secondary pathway — BSc at Dalhousie, MSc at UVic, PhD at Scripps — carries an estimated total cost of roughly $150,000–200,000 CAD over 13 years for tuition, living costs, and travel. Importantly: PhD programs at institutions like Scripps are typically fully funded with a stipend, meaning JJ would be paid to do his research in the final 4–6 years. NSERC scholarships, provincial awards, and university fellowships can reduce BSc and MSc costs significantly. The adventure plan's total estimated cost of $76,500–103,000 CAD over 15 trips is arguably the best educational investment a family can make before university — experiential learning, scientific curiosity, and ecological literacy built trip by trip.</p>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-quote">"The farm taught him to observe. The ocean taught him why it matters."</div>
+  <div class="footer-byline">JJ's Adventure Plan · 2026–2044<br>CJ · MJ · JJ</div>
+</footer>
+</div>
+</body>
+</html>
