@@ -5,21 +5,21 @@
 <title>Disney Road Trip — JJ's Adventure Plan</title>
 <link rel="stylesheet" href="style.css">
 <style>
-.must-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin:1.5rem 0 2.25rem;}
-.must-box{background:var(--white);padding:1.1rem 1.25rem;}
-.must-box h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;line-height:1.05;margin-bottom:.45rem;color:var(--ink);}
-.must-box p{font-size:.84rem;color:var(--ink2);line-height:1.55;font-weight:300;}
 .route-line{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin:1.5rem 0 2.25rem;}
 .route-stop{background:var(--white);padding:1rem;text-align:center;}
 .route-stop strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.25rem;line-height:1.05;color:var(--ink);margin-bottom:.3rem;}
 .route-stop span{font-size:.78rem;color:var(--ink2);font-weight:300;}
-@media(max-width:800px){.must-grid,.route-line{grid-template-columns:1fr;}}
+.phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin:1.5rem 0 2.25rem;}
+.phase-card{background:var(--white);padding:1.15rem 1.25rem;}
+.phase-card h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;line-height:1.05;margin-bottom:.45rem;color:var(--ink);}
+.phase-card p{font-size:.84rem;color:var(--ink2);line-height:1.55;font-weight:300;}
+@media(max-width:900px){.route-line,.phase-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 <nav class="nav">
   <a class="nav-brand" href="index.html">JJ's Adventure Plan</a>
-  <ul class="nav-links"><li><a href="index.html" class="">Home</a></li><li><a href="education.html" class="">Education</a></li></ul>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="education.html">Education</a></li></ul>
 </nav>
 <div class="page-wrap">
 <section class="section">
@@ -28,107 +28,129 @@
     <div class="trip-hero-left">
       <div class="trip-kicker">Trip 01 · October 2029 · Age 3</div>
       <h1 class="trip-title">Disney Road Trip</h1>
-      <div class="trip-tags"><span class="tag tag-ocean">Theme: Wonder</span><span class="tag tag-outline">Drive Plan</span><span class="tag tag-outline">Smoky Mountains</span><span class="tag tag-outline">Disney</span><span class="tag tag-outline">Space Coast</span></div>
-      <p class="trip-hero-desc">This is the soft opening of the whole adventure arc: a staged road trip from Commanda to Detroit, the Smoky Mountains, Walt Disney World, Kennedy Space Center, and home. The point is not academic pressure — it is first big wonder, family rhythm, animals, stories, rockets, mountains, and magic.</p>
+      <div class="trip-tags"><span class="tag tag-ocean">Theme: Wonder</span><span class="tag tag-outline">9 Days</span><span class="tag tag-outline">Road Trip</span><span class="tag tag-outline">Disney</span><span class="tag tag-outline">SeaWorld</span><span class="tag tag-outline">Kennedy</span></div>
+      <p class="trip-hero-desc">The first major family expedition: a practical but magical road trip from Commanda to Beckley, Walt Disney World, SeaWorld, Kennedy Space Center, and home. The story is simple: road-trip adventure, Disney wonder, nature and ocean curiosity, then a real-world space exploration finale.</p>
     </div>
     <div class="trip-hero-image"><img src="https://images.unsplash.com/photo-1597466599360-3b9775841aec?w=900&amp;q=85" alt="Disney Road Trip"><div class="img-credit">October 2029 · Age 3</div></div>
   </div>
 </section>
 
 <section class="section">
-  <div class="callout callout-ocean"><div class="callout-label">Trip Identity</div><p>This page uses the detailed road-trip plan rather than the earlier fly-in Disney concept: two drive days south, three nights in the Smokies, six nights at Disney’s Contemporary Resort, a Kennedy Space Center day, and a two-day drive home.</p></div>
+  <div class="callout callout-ocean"><div class="callout-label">Updated Plan</div><p>This page now reflects the finalized shorter drive plan: no Gatlinburg segment, Beckley overnight on the way down, Disney arrival fireworks from the Contemporary, two Magic Kingdom days, a hotel switch, EPCOT/Hollywood Studios, Animal Kingdom, SeaWorld, Kennedy Space Center, and two travel days home.</p></div>
 
   <div class="practical">
-    <div class="prac-box"><div class="prac-label">Date</div><div class="prac-value">Sept 22 – Oct 6, 2029</div></div>
+    <div class="prac-box"><div class="prac-label">Trip Length</div><div class="prac-value">9 Days</div></div>
     <div class="prac-box"><div class="prac-label">Age</div><div class="prac-value">3</div></div>
-    <div class="prac-box"><div class="prac-label">Theme</div><div class="prac-value">Wonder</div></div>
-    <div class="prac-box"><div class="prac-label">Trip Type</div><div class="prac-value">Road trip expedition</div></div>
+    <div class="prac-box"><div class="prac-label">Opening Drive</div><div class="prac-value">4:00 AM departure</div></div>
+    <div class="prac-box"><div class="prac-label">Core Strategy</div><div class="prac-value">Pace, wonder, and recovery</div></div>
   </div>
 
   <div class="section-kicker">Route</div>
-  <h2 class="section-heading">The Road South</h2>
+  <h2 class="section-heading">The Simplified Road Trip</h2>
   <div class="route-line">
-    <div class="route-stop"><strong>Commanda</strong><span>Family breakfast, load vehicle, begin the adventure</span></div>
-    <div class="route-stop"><strong>Detroit</strong><span>First overnight and border-crossing buffer</span></div>
-    <div class="route-stop"><strong>Gatlinburg</strong><span>Smoky Mountains, Dollywood, farm animals, Anakeesta</span></div>
-    <div class="route-stop"><strong>Disney</strong><span>Contemporary Resort, parks, Halloween party, Kennedy Space Center</span></div>
-    <div class="route-stop"><strong>Home</strong><span>Two-day return via Charlotte and family recap</span></div>
+    <div class="route-stop"><strong>Commanda</strong><span>Leave at 4:00 AM with JJ in pajamas</span></div>
+    <div class="route-stop"><strong>Beckley</strong><span>Texas Roadhouse, final fuel, Fairfield overnight</span></div>
+    <div class="route-stop"><strong>Disney</strong><span>Contemporary fireworks, Magic Kingdom, hotel switch</span></div>
+    <div class="route-stop"><strong>Sea + Space</strong><span>SeaWorld, then Kennedy Space Center</span></div>
+    <div class="route-stop"><strong>Home</strong><span>Two-day return and expedition reflection</span></div>
   </div>
 
-  <div class="section-kicker">Must-Visit Stops</div>
-  <h2 class="section-heading">Educational & Memory Anchors</h2>
-  <div class="pillars">
-    <div class="pillar"><div class="pillar-label">Core Stops</div><ul><li>Disney’s Contemporary Resort</li><li>Magic Kingdom</li><li>Animal Kingdom safari and trails</li><li>EPCOT: The Seas and Living with the Land</li><li>Hollywood Studios</li><li>Mickey’s Not-So-Scary Halloween Party</li><li>Kennedy Space Center</li></ul></div>
-    <div class="pillar"><div class="pillar-label">Road Trip Anchors</div><ul><li>Detroit overnight buffer</li><li>Gatlinburg cabin</li><li>Dollywood Express and Craftsman’s Valley</li><li>The Funny Farm</li><li>Anakeesta gondola and treetop walk</li><li>Charlotte overnight on return</li></ul></div>
-    <div class="pillar"><div class="pillar-label">What To Capture</div><ul><li>First castle view</li><li>Favourite animal</li><li>First monorail memory</li><li>Best fireworks reaction</li><li>Rockets at Kennedy</li><li>One family road-trip photo from each stop</li></ul></div>
+  <div class="section-kicker">Story Arc</div>
+  <h2 class="section-heading">Why This Version Works</h2>
+  <div class="phase-grid">
+    <div class="phase-card"><h3>Road Trip</h3><p>Day 1 and Day 2 are structured around sleep mileage, food cadence, playground resets, and arriving with enough energy left to enjoy the first Disney moment.</p></div>
+    <div class="phase-card"><h3>Wonder</h3><p>Two Magic Kingdom days protect the core Disney experience. The Contemporary arrival night delivers fireworks without crowd stress.</p></div>
+    <div class="phase-card"><h3>Discovery</h3><p>EPCOT, Animal Kingdom, SeaWorld, and Kennedy shift the trip toward oceans, animals, systems, and science before heading home.</p></div>
   </div>
 
-  <div class="section-kicker">Accommodation</div>
-  <h2 class="section-heading">Where This Trip Lives</h2>
-  <div class="must-grid">
-    <div class="must-box"><h3>Gatlinburg Cabin</h3><p>Panorama-style cabin concept: two bedrooms, two bathrooms, hot tub, fireplace, full kitchen, pool table, deck, and mountain views. This makes the Smokies segment feel like its own family chapter instead of just a pass-through.</p></div>
-    <div class="must-box"><h3>Disney’s Contemporary Resort</h3><p>Main Tower Theme Park View is the dream version: walkable to Magic Kingdom, monorail through the resort, castle/fireworks views, Steakhouse 71, California Grill, and the easiest possible toddler logistics.</p></div>
-  </div>
-
-  <div class="section-kicker">Detailed Itinerary</div>
-  <h2 class="section-heading">Day-by-Day Plan</h2>
+  <div class="section-kicker">Day-by-Day</div>
+  <h2 class="section-heading">Final 9-Day Plan</h2>
   <div class="day-table"><div class="day-row">
   <div class="day-num"><div class="dnl">Day</div><div class="dnd">1</div></div>
-  <div class="day-tc"><div class="dtt">Commanda → Detroit</div><span class="dloc">Drive South · Night 1</span></div>
-  <div class="day-bd"><div class="ddesc">Depart after a full family breakfast at home, drive south through Barrie/Toronto, cross at Windsor–Detroit, and settle into the Detroit Metro Airport Marriott for an easy first night.</div><div class="pills"><span class="pill">Drive day</span><span class="pill">~550 km</span><span class="pill">Border crossing</span></div><div class="dlearn">Learning focus: Travel rhythm: keep the first day calm, staged, and toddler-friendly.</div></div>
+  <div class="day-tc"><div class="dtt">Commanda → Beckley, West Virginia</div><span class="dloc">Opening Road Day</span></div>
+  <div class="day-bd">
+    <div class="ddesc">Leave Commanda at 4:00 AM with JJ still asleep in pajamas and blankets. This day banks major mileage early, then turns into a true road-trip opening chapter: breakfast near Niagara, crossing into the United States, play beside Lake Erie, Appalachian driving, Texas Roadhouse, and a hotel night in Beckley.</div>
+    <div class="pills"><span class="pill">4:00 AM departure</span><span class="pill">PJs in the car</span><span class="pill">Beckley overnight</span></div>
+    <ul><li>Gateway Travel Centre — breakfast, fuel, coffee, bathrooms, and a real wake-up stop after the first long leg.</li><li>Shades Beach Playground — the major movement reset of the day beside Lake Erie.</li><li>Subway + fuel in Erie — efficient lunch and refuel before the afternoon push.</li><li>Texas Roadhouse in Beckley — dinner as the emotional finish line before final gas and hotel.</li><li>Fairfield by Marriott Inn &amp; Suites Beckley — pool, pajamas, decompression, and sleep.</li></ul>
+    <div class="dlearn">Learning focus: The first lesson is travel rhythm: sleep mileage, planned movement, food cadence, and ending the day with a clear reward.</div>
+  </div>
 </div><div class="day-row">
   <div class="day-num"><div class="dnl">Day</div><div class="dnd">2</div></div>
-  <div class="day-tc"><div class="dtt">Detroit → Gatlinburg</div><span class="dloc">Drive South · Smoky Mountains</span></div>
-  <div class="day-bd"><div class="ddesc">Long I-75 drive through Ohio, Kentucky, and Tennessee with planned stops around Cincinnati and Lexington before arriving at the Gatlinburg cabin for groceries, dinner, and sleep.</div><div class="pills"><span class="pill">Long drive</span><span class="pill">~740 km</span><span class="pill">Mountain arrival</span></div><div class="dlearn">Learning focus: Watch the landscape shift from Great Lakes corridor to Appalachian foothills.</div></div>
+  <div class="day-tc"><div class="dtt">Beckley → Walt Disney World</div><span class="dloc">Disney Arrival Mission Day</span></div>
+  <div class="day-bd">
+    <div class="ddesc">Hotel breakfast starts at 6:00 AM, then depart by 6:30 AM. This is a focused push toward Disney with one integrated Columbia stop: Little Pigs BBQ takeout at opening, then Leo’s Landing playground for an hour of movement and picnic-style lunch before the final Florida push.</div>
+    <div class="pills"><span class="pill">6:30 AM departure</span><span class="pill">Little Pigs BBQ</span><span class="pill">Fireworks from hotel</span></div>
+    <ul><li>Little Pigs BBQ — pick up takeout right at opening to avoid a sit-down lunch delay.</li><li>Leo’s Landing Inclusive Playground — one hour of climbing, running, eating, and resetting before the final drive.</li><li>Disney’s Contemporary Resort — arrival-night splurge for convenience, monorail atmosphere, and fireworks viewing.</li><li>Watch Happily Ever After from the hotel instead of fighting Magic Kingdom crowds on arrival night.</li><li>Early sleep so the first full park day can feel magical rather than exhausted.</li></ul>
+    <div class="dlearn">Learning focus: Day 2 is about anticipation and restraint: get to Disney with emotional energy left instead of burning it on extra stops.</div>
+  </div>
 </div><div class="day-row">
   <div class="day-num"><div class="dnl">Day</div><div class="dnd">3</div></div>
-  <div class="day-tc"><div class="dtt">Dollywood</div><span class="dloc">Pigeon Forge</span></div>
-  <div class="day-bd"><div class="ddesc">Rope drop Big Bear Mountain, Dragonflier, Dollywood Express, Craftsman’s Valley, and a Southern lunch at Aunt Granny’s. Keep the day front-loaded and leave before exhaustion sets in.</div><div class="pills"><span class="pill">Theme park</span><span class="pill">Train</span><span class="pill">Crafts</span></div><div class="dlearn">Learning focus: A softer theme-park warmup before Disney, with trains, crafts, mountains, and music.</div></div>
+  <div class="day-tc"><div class="dtt">Magic Kingdom</div><span class="dloc">First Full Disney Park Day</span></div>
+  <div class="day-bd">
+    <div class="ddesc">The first full park day is about wonder, not completion. With the Contemporary location, the family can walk into Magic Kingdom, focus on Fantasyland and classic attractions, take breaks easily, and let JJ’s first castle day unfold without pressure.</div>
+    <div class="pills"><span class="pill">Castle reveal</span><span class="pill">Fantasyland</span><span class="pill">Low pressure</span></div>
+    <ul><li>Prioritize castle reveal, Fantasyland, Peter Pan, Winnie the Pooh, Little Mermaid, Jungle Cruise, and Pirates.</li><li>Use the hotel location strategically for breaks.</li><li>Do not force fireworks in the park if arrival-night fireworks already delivered the emotional payoff.</li><li>The goal is a happy kid and flexible memories, not a completed ride checklist.</li></ul>
+    <div class="dlearn">Learning focus: This is the pure imagination day: stories, music, characters, rides, and the feeling of being inside the world you drove toward.</div>
+  </div>
 </div><div class="day-row">
   <div class="day-num"><div class="dnl">Day</div><div class="dnd">4</div></div>
-  <div class="day-tc"><div class="dtt">The Funny Farm + Anakeesta</div><span class="dloc">Chuckey + Gatlinburg</span></div>
-  <div class="day-bd"><div class="ddesc">Morning farm visit with Highland cows, miniature ponies, goats, chickens, ducks, bunnies, pony rides, and possible bottle-feeding. Return for rest, then Anakeesta gondola, treetop walk, sunset views, and dinner.</div><div class="pills"><span class="pill">Animals</span><span class="pill">Gondola</span><span class="pill">Sunset</span></div><div class="dlearn">Learning focus: Connect farm life at home with animals, mountains, and observation on the road.</div></div>
+  <div class="day-tc"><div class="dtt">Magic Kingdom + Hotel Transition</div><span class="dloc">Second Magic Kingdom Day</span></div>
+  <div class="day-bd">
+    <div class="ddesc">A second Magic Kingdom day removes the pressure from Day 3. Revisit favourites, catch anything missed, slow down, and then move from the Contemporary to a more affordable Disney-area hotel later in the day.</div>
+    <div class="pills"><span class="pill">Repeat favourites</span><span class="pill">Cost reset</span><span class="pill">Hotel switch</span></div>
+    <ul><li>Use the morning for repeat favourites and priority attractions.</li><li>Keep the afternoon flexible for packing and transition.</li><li>Move hotels after the highest-value Contemporary nights are complete.</li><li>This strategy keeps the best Disney logistics for the most important phase while reducing total trip cost.</li></ul>
+    <div class="dlearn">Learning focus: The second day teaches that pacing beats maximizing. The trip stays magical because the family does not have to cram Magic Kingdom into one day.</div>
+  </div>
 </div><div class="day-row">
   <div class="day-num"><div class="dnl">Day</div><div class="dnd">5</div></div>
-  <div class="day-tc"><div class="dtt">Gatlinburg → Walt Disney World</div><span class="dloc">The Big Drive</span></div>
-  <div class="day-bd"><div class="ddesc">Early departure from Gatlinburg, lunch around Valdosta or Lake City, Florida arrival, and check-in at Disney’s Contemporary Resort. Dinner at Steakhouse 71 and first castle view at night.</div><div class="pills"><span class="pill">Long drive</span><span class="pill">~1,050 km</span><span class="pill">Disney arrival</span></div><div class="dlearn">Learning focus: The anticipation day: mountains give way to Florida and the first Disney moment.</div></div>
+  <div class="day-tc"><div class="dtt">EPCOT + Hollywood Studios</div><span class="dloc">Systems, Oceans, and Storytelling</span></div>
+  <div class="day-bd">
+    <div class="ddesc">This day shifts from fantasy into exploration. EPCOT provides oceans, food systems, technology, and world geography; Hollywood Studios adds storytelling, Toy Story, and cinematic imagination. Keep the day selective rather than trying to exhaust both parks.</div>
+    <div class="pills"><span class="pill">The Seas</span><span class="pill">Living with the Land</span><span class="pill">Toy Story</span></div>
+    <ul><li>EPCOT priorities: The Seas with Nemo &amp; Friends, aquarium exhibits, Turtle Talk, Living with the Land, and Spaceship Earth.</li><li>Hollywood Studios priorities: Toy Story Land, Mickey &amp; Minnie’s Runaway Railway, shows, and atmosphere.</li><li>Avoid making this a two-park endurance test. Choose the experiences that fit the story.</li></ul>
+    <div class="dlearn">Learning focus: This is the bridge from Disney magic toward the broader adventure-roadmap themes: oceans, systems, culture, technology, and storytelling.</div>
+  </div>
 </div><div class="day-row">
   <div class="day-num"><div class="dnl">Day</div><div class="dnd">6</div></div>
-  <div class="day-tc"><div class="dtt">Magic Kingdom</div><span class="dloc">Walt Disney World</span></div>
-  <div class="day-bd"><div class="ddesc">Walk from the Contemporary for early entry. Prioritize Seven Dwarfs Mine Train if height works, Peter Pan, Winnie the Pooh, Little Mermaid, Haunted Mansion, Jungle Cruise, hotel rest, Pirates, Be Our Guest, and Happily Ever After fireworks.</div><div class="pills"><span class="pill">Castle</span><span class="pill">Fireworks</span><span class="pill">Walkable</span></div><div class="dlearn">Learning focus: Pure wonder day: stories, music, fireworks, and the benefit of staying beside Magic Kingdom.</div></div>
+  <div class="day-tc"><div class="dtt">Disney’s Animal Kingdom</div><span class="dloc">Nature and Conservation Day</span></div>
+  <div class="day-bd">
+    <div class="ddesc">Animal Kingdom becomes the nature chapter of the Disney portion. The day should move slower, with Kilimanjaro Safaris, animal trails, Festival of the Lion King, and Pandora atmosphere rather than a ride-heavy agenda.</div>
+    <div class="pills"><span class="pill">Safari</span><span class="pill">Animal trails</span><span class="pill">Conservation</span></div>
+    <ul><li>Prioritize Kilimanjaro Safaris early.</li><li>Add Gorilla Falls and/or Maharajah Jungle Trek if energy is good.</li><li>Festival of the Lion King is a strong rest-and-entertainment anchor.</li><li>Pandora is worth seeing for atmosphere, even if the day is not thrill-ride focused.</li></ul>
+    <div class="dlearn">Learning focus: This day connects Disney wonder to real habitats, animal behaviour, conservation, and future wildlife-focused expeditions.</div>
+  </div>
 </div><div class="day-row">
   <div class="day-num"><div class="dnl">Day</div><div class="dnd">7</div></div>
-  <div class="day-tc"><div class="dtt">Disney’s Animal Kingdom</div><span class="dloc">Walt Disney World</span></div>
-  <div class="day-bd"><div class="ddesc">Pandora first, Na’vi River Journey, Kilimanjaro Safaris, Gorilla Falls or Maharajah Jungle Trek, Festival of the Lion King, and an early close. Adults can rotate Flight of Passage if desired.</div><div class="pills"><span class="pill">Safari</span><span class="pill">Animals</span><span class="pill">Conservation</span></div><div class="dlearn">Learning focus: First major animal-world day: safari, habitats, conservation, and animal behaviour.</div></div>
+  <div class="day-tc"><div class="dtt">SeaWorld Orlando</div><span class="dloc">Ocean Life Day</span></div>
+  <div class="day-bd">
+    <div class="ddesc">SeaWorld is the marine-life bridge between Disney and the future expedition arc. The focus is not thrill rides; it is dolphins, sea lions, penguins, aquariums, orcas, animal care, and the beginning of ocean curiosity.</div>
+    <div class="pills"><span class="pill">Marine animals</span><span class="pill">Aquariums</span><span class="pill">Ocean curiosity</span></div>
+    <ul><li>Prioritize marine-life exhibits and shows over ride completion.</li><li>Use animal care and aquarium areas to introduce conservation and behaviour questions.</li><li>Keep the day emotionally lighter after multiple Disney days.</li><li>This is the ocean chapter before the space finale.</li></ul>
+    <div class="dlearn">Learning focus: SeaWorld connects the first-childhood Disney trip to later whales, Monterey, Saguenay, Newfoundland, Hawaii, and Alaska.</div>
+  </div>
 </div><div class="day-row">
   <div class="day-num"><div class="dnl">Day</div><div class="dnd">8</div></div>
-  <div class="day-tc"><div class="dtt">EPCOT</div><span class="dloc">Walt Disney World</span></div>
-  <div class="day-bd"><div class="ddesc">Focus on The Seas with Nemo &amp; Friends, aquarium tanks, Turtle Talk, Living with the Land, Spaceship Earth, and World Showcase at a toddler pace. Keep this as the ocean-and-systems Disney day.</div><div class="pills"><span class="pill">Aquarium</span><span class="pill">Food systems</span><span class="pill">World cultures</span></div><div class="dlearn">Learning focus: Early marine language: fish, rays, turtles, aquariums, food systems, and world geography.</div></div>
+  <div class="day-tc"><div class="dtt">Kennedy Space Center + Begin Drive Home</div><span class="dloc">Science and Exploration Finale</span></div>
+  <div class="day-bd">
+    <div class="ddesc">Kennedy opens at 9:00 AM. Arrive at opening, spend roughly five focused hours, then leave around 2:00 PM to begin the northbound drive. This keeps Kennedy inspiring instead of exhausting.</div>
+    <div class="pills"><span class="pill">9:00 AM opening</span><span class="pill">5-hour visit</span><span class="pill">Drive north after</span></div>
+    <ul><li>Bus Tour + Apollo/Saturn V Center — do this early while energy is high.</li><li>Space Shuttle Atlantis — the core emotional exhibit.</li><li>Planet Play — critical toddler movement reset.</li><li>Rocket Garden — outdoor scale and final exploration before departure.</li><li>Leave satisfied, not depleted.</li></ul>
+    <div class="dlearn">Learning focus: The trip widens from imagination and animals to real-world exploration: rockets, engineering, spaceflight, and human ambition.</div>
+  </div>
 </div><div class="day-row">
   <div class="day-num"><div class="dnl">Day</div><div class="dnd">9</div></div>
-  <div class="day-tc"><div class="dtt">Mickey’s Not-So-Scary Halloween Party</div><span class="dloc">Magic Kingdom Evening</span></div>
-  <div class="day-bd"><div class="ddesc">Keep the morning slow, nap hard, then return for costumes, trick-or-treating, Halloween parade, themed fireworks, characters, and atmosphere. This is the late-night magic night, not a full park-grind day.</div><div class="pills"><span class="pill">Halloween</span><span class="pill">Parade</span><span class="pill">Special event</span></div><div class="dlearn">Learning focus: Tradition and memory: a seasonal Disney event that feels different from a regular park day.</div></div>
-</div><div class="day-row">
-  <div class="day-num"><div class="dnl">Day</div><div class="dnd">10</div></div>
-  <div class="day-tc"><div class="dtt">Hollywood Studios</div><span class="dloc">Walt Disney World</span></div>
-  <div class="day-bd"><div class="ddesc">Prioritize Toy Story Land, Mickey &amp; Minnie’s Runaway Railway, shows, character moments, and a selective adult rotation for Star Wars or thrill rides. Keep expectations realistic after the Halloween night.</div><div class="pills"><span class="pill">Toy Story</span><span class="pill">Shows</span><span class="pill">Star Wars</span></div><div class="dlearn">Learning focus: Storytelling and imagination day, with a lighter pace after the late party night.</div></div>
-</div><div class="day-row">
-  <div class="day-num"><div class="dnl">Day</div><div class="dnd">11</div></div>
-  <div class="day-tc"><div class="dtt">Kennedy Space Center + Space Coast</div><span class="dloc">Merritt Island / Cocoa Beach</span></div>
-  <div class="day-bd"><div class="ddesc">Day trip to Kennedy Space Center for rockets, Atlantis, launch history, astronaut exhibits, and the Space Coast. Add a brief beach/ocean moment if energy allows before returning to Disney.</div><div class="pills"><span class="pill">Space</span><span class="pill">Rockets</span><span class="pill">Coast</span></div><div class="dlearn">Learning focus: The trip widens from magic to science: rockets, engineering, exploration, and the Atlantic coast.</div></div>
-</div><div class="day-row">
-  <div class="day-num"><div class="dnl">Day</div><div class="dnd">12</div></div>
-  <div class="day-tc"><div class="dtt">Walt Disney World → Charlotte</div><span class="dloc">Return Drive · Night 1</span></div>
-  <div class="day-bd"><div class="ddesc">Start the return north with a manageable drive to Charlotte. Treat this as decompression after Disney rather than trying to add another attraction-heavy day.</div><div class="pills"><span class="pill">Drive home</span><span class="pill">Reset</span><span class="pill">Overnight</span></div><div class="dlearn">Learning focus: Travel recovery: protect the memory of the trip by not overloading the return.</div></div>
-</div><div class="day-row">
-  <div class="day-num"><div class="dnl">Day</div><div class="dnd">13</div></div>
-  <div class="day-tc"><div class="dtt">Charlotte → Commanda</div><span class="dloc">Return Home</span></div>
-  <div class="day-bd"><div class="ddesc">Final long drive back to Ontario, with simple stops and a family recap of favourite moments: castle, animals, rockets, mountains, fireworks, and the road itself.</div><div class="pills"><span class="pill">Homeward</span><span class="pill">Reflection</span><span class="pill">Journal</span></div><div class="dlearn">Learning focus: Close the first big expedition with photos, questions, and a simple family journal entry.</div></div>
+  <div class="day-tc"><div class="dtt">Power Drive Home</div><span class="dloc">Return and Reflection</span></div>
+  <div class="day-bd">
+    <div class="ddesc">The final day is intentionally straightforward: snacks, music, movies, simple stops, and the push home. This day closes the first major family expedition with a sense of completion.</div>
+    <div class="pills"><span class="pill">Homeward</span><span class="pill">Snacks</span><span class="pill">Reflection</span></div>
+    <ul><li>Keep expectations simple and practical.</li><li>Use photos and questions from the trip as conversation prompts.</li><li>Capture one final family road-trip note after getting home.</li></ul>
+    <div class="dlearn">Learning focus: The final lesson is closure: talk through favourite memories, what surprised everyone, and what should go into the family expedition journal.</div>
+  </div>
 </div></div>
 
   <div class="extras">
-    <div class="extra-box"><div class="extra-label">Planning Notes</div><ul><li>Protect naps and recovery time. The trip works because the hard days are staged and the Disney hotel is walkable.</li><li>Book high-value Disney reservations early: Contemporary room preference, Steakhouse 71, Be Our Guest, Halloween Party, and Kennedy Space Center day planning.</li><li>Keep the first Disney trip magical, not perfect. The memory is castle, monorail, animals, fireworks, rockets, and being together.</li></ul></div>
-    <div class="extra-box"><div class="extra-label">Navigation</div><ul><li><a class="back-btn" href="trip-niagara.html">Next: Niagara Falls + Welland Canal →</a></li><li><a href="index.html">Return to full roadmap</a></li></ul></div>
+    <div class="extra-box"><div class="extra-label">Key Planning Notes</div><ul><li>Day 1 dinner should stay before final fuel so Texas Roadhouse remains the finish-line reward.</li><li>Day 2 Columbia stop should stay efficient: Little Pigs takeout at opening, then Leo’s Landing playground/picnic reset.</li><li>Arrival night should not become a park night. Fireworks from the hotel are the capstone.</li><li>Kennedy should be a focused 9 AM–2 PM visit, not a completionist museum marathon.</li></ul></div>
+    <div class="extra-box"><div class="extra-label">Trip Journal Prompts</div><ul><li>What did JJ notice first when he saw Disney?</li><li>Favourite animal of the trip?</li><li>Best road-trip snack?</li><li>What surprised us at Kennedy?</li><li>What should we remember before planning the next expedition?</li></ul></div>
   </div>
 </section>
 <footer class="site-footer"><div class="footer-quote">"The farm taught him to observe. The world taught him why it matters."</div><div class="footer-byline">JJ's Adventure Plan · 2026–2044<br>CJ · MJ · JJ</div></footer>
